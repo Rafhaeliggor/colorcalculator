@@ -93,21 +93,13 @@ class Main(ctk.CTk):
         self.conversor_to_hex(rgb_final)
     
     def conversor_to_hex(self, value):
-        print(value)
-        red = str(hex(value[0]))
-        if len(red) == 1:
-            red.insert[0,0]
-        green = str(hex(value[1]))
-        if len(green) == 1:
-            green.insert[0,0]
-        blue = str(hex(value[2]))
-        if len(blue) == 1:
-            blue.insert[0,0]
-        final = (red[2:4]+green[2:4]+blue[2:4])
-        print(final)
+        red = f"{value[0]:02x}"
+        green = f"{value[1]:02x}"
+        blue = f"{value[2]:02x}"
+        final = (red + green + blue)
 
-        #self.colorfinal_entry = ctk.CTkLabel(self, text=final).place(relx=0.7, rely=0.4, anchor="nw")
-        #self.colorfinal_canvas = ctk.CTkCanvas(self, bg=f"#{final}", borderwidth=0, highlightthickness=0).place(relx=0.615, rely=0.38, anchor="nw", relheight=0.1, relwidth=0.07)
+        self.colorfinal_entry = ctk.CTkLabel(self, text=final).place(relx=0.7, rely=0.4, anchor="nw")
+        self.colorfinal_canvas = ctk.CTkCanvas(self, bg=f"#{final}", borderwidth=0, highlightthickness=0).place(relx=0.615, rely=0.38, anchor="nw", relheight=0.1, relwidth=0.07)
         
 
         
